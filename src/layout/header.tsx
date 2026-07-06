@@ -18,7 +18,9 @@ import { styled, useTheme } from '@mui/material/styles'
 import { alpha } from '@mui/material/styles'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import * as React from 'react'
+import { useState } from 'react'
+
+import { ThemeToggle } from '@/features'
 
 const drawerWidth = 160
 const tempArr = Array.from({ length: 10 }, (_, i) => i)
@@ -81,9 +83,9 @@ export function SearchBar({ placeholder = 'Search…' }: { placeholder?: string 
         width: '100%',
         ml: 0,
         borderRadius: 1,
-        backgroundColor: alpha(theme.palette.common.white, 0.15),
+        backgroundColor: alpha(theme.palette.common.white, 0.1),
         '&:hover': {
-          backgroundColor: alpha(theme.palette.common.white, 0.25),
+          backgroundColor: alpha(theme.palette.common.white, 0.15),
         },
         [theme.breakpoints.up('sm')]: {
           width: 'auto',
@@ -149,7 +151,7 @@ function Select() {
 
 export function Header() {
   const theme = useTheme()
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = useState(false)
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -178,10 +180,11 @@ export function Header() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h5" noWrap component="div" sx={{ flexGrow: 1, fontSize: '1.2rem' }}>
+          <Typography variant="h5" noWrap component="div" sx={{ flexGrow: 1, fontSize: '1.25rem' }}>
             <a href="/">Installed Extensions Manager</a>
           </Typography>
           <SearchBar />
+          <ThemeToggle />
         </Toolbar>
       </AppBar>
       <Drawer
@@ -191,8 +194,7 @@ export function Header() {
           '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',
-            bgcolor: '#282828',
-            color: 'inherit',
+            color: 'text.primary',
           },
         }}
         variant="persistent"

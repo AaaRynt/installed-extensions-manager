@@ -1,10 +1,30 @@
-export interface ExtensionItem {
+export const ALL_CATEGORIES = [
+  'AI',
+  'Azure',
+  'Chat',
+  'Data Science',
+  'Debuggers',
+  'Education',
+  'Extension Packs',
+  'Formatters',
+  'Git',
+  'Linters',
+  'Other',
+  'Programming Languages',
+  'SCM Providers',
+  'Snippets',
+  'Testing',
+  'Themes',
+  'Visualization',
+] as const
+
+export type ExtensionItem = {
   id: string
   name: string
   publisher: string
   version: string
   description: string
-  categories: string[]
+  categories: (typeof ALL_CATEGORIES)[number][]
   icon: string
   rating: number | null
   ratingCount: number | null

@@ -1,11 +1,12 @@
 // src/layout/footer.tsx
 import { GitHub, Clear } from '@mui/icons-material'
 import { IconButton } from '@mui/material'
+import { Box } from '@mui/material'
 
 export function Footer() {
   return (
     <footer className="flex flex-row items-center justify-center gap-2 px-8 py-2 text-center">
-      <div className="flex h-8 flex-row items-center gap-2">
+      <Box className="flex h-8 flex-row items-center gap-2">
         <IconButton
           href="https://github.com/AaaRynt/installed-extensions-manager"
           target="_blank"
@@ -47,7 +48,7 @@ export function Footer() {
         >
           <img src="/MUI.svg" alt="MUI" className="h-5" />
         </IconButton>
-      </div>
+      </Box>
     </footer>
   )
 }
