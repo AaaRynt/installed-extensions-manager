@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="flex flex-row items-center justify-center gap-2 border-t px-8 py-2 text-center">
       <div className="flex h-8 flex-row items-center gap-2">
         <IconButton
-          href="https://github.com/AaaRynt/material-ui"
+          href="https://github.com/AaaRynt/installed-extensions-manager"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub repository"

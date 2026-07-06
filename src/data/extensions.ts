@@ -16,7 +16,7 @@ export interface ExtensionItem {
   updatedAt: string
 }
 
-export const mockExtensions: ExtensionItem[] = [
+export const extensionsData: ExtensionItem[] = [
   {
     id: 'ahmadawais.codeshot',
     name: 'codeshot',

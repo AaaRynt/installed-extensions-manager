@@ -1,30 +1,71 @@
-# Project instructions
+# MUI Project Skill Guide
 
-This is a React + TypeScript + Vite project using Material UI.
+## Core Philosophy
 
-Use:
+Material UI is the primary UI system in this project.
+Do not treat it as just components, but as a design system.
 
-- Material UI v7
-- @mui/material
-- @mui/icons-material
-- @mui/x-data-grid when table features are complex
-- MUI System: Box, Stack, Container, Grid, sx
-- TypeScript strict-friendly code
+## Layout Rules
 
-Prefer:
+- Use Box / Stack / Grid for layout
+- Avoid raw div unless absolutely necessary
+- Prefer Stack for vertical/horizontal layout
+- Use Grid only for page-level layout
 
-- sx over className for MUI components
-- Stack for simple flex layouts
-- Dialog for create/edit forms
-- Snackbar + Alert for feedback
-- ThemeProvider/createTheme for global style
+## Component Mapping
 
-Avoid:
+### Data Display
 
-- Tailwind unless explicitly requested
-- Ant Design
-- Chakra UI
-- raw CSS modules unless necessary
-- deprecated MUI APIs
+- Card → primary item container (Extension, Project)
+- Chip → category / tag / status
+- Avatar → icon / extension logo
 
-When modifying UI, follow MUI official patterns and keep components small.
+### Navigation
+
+- Drawer → sidebar navigation + detail panel
+- Tabs → view switching inside page
+
+### Input
+
+- TextField → search input
+- Select → filters
+- Switch → enabled/disabled toggle
+
+### Feedback
+
+- Snackbar → async action result
+- Alert → error/info inside page
+- Dialog → create/edit flow
+
+## MUI System Rules
+
+- Use sx only for small visual adjustments
+- Do NOT build layout with sx alone
+- Use theme palette instead of hex colors
+- Prefer:
+  - text.secondary
+  - primary.main
+  - background.paper
+
+## Data Rules
+
+- All data comes from mockExtensions.ts
+- No backend
+- State persistence via localStorage only
+
+## Anti-patterns
+
+- Do not mix Tailwind for layout logic
+- Do not use inline styles for layout
+- Do not recreate MUI components manually
+- Do not bypass theme system
+
+## UI Structure Pattern
+
+Page layout should follow:
+
+AppBar
+→ Sidebar Drawer
+→ Main Content Grid/List
+→ Optional Detail Drawer
+→ Snackbar feedback layer
