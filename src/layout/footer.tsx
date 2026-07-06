@@ -4,7 +4,7 @@ import { IconButton } from '@mui/material'
 
 export function Footer() {
   return (
-    <footer className="flex flex-row items-center justify-center gap-2 border-t px-8 py-2 text-center">
+    <footer className="flex flex-row items-center justify-center gap-2 px-8 py-2 text-center">
       <div className="flex h-8 flex-row items-center gap-2">
         <IconButton
           href="https://github.com/AaaRynt/installed-extensions-manager"
